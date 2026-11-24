@@ -13,7 +13,7 @@ We analysed 77,918,094 trips after cleaning 24 monthly files. Recorded trips fel
 | Data | [24 monthly Parquet files as a ZIP](https://github.com/Thiago-Pena-Silverio/NYC-YELLOW-TAXI-ANALYSIS/releases/download/data-2022-2023/nyc-yellow-taxi-2022-2023-raw.zip), [source URLs and SHA-256 checksums](Data/manifest.csv), [taxi-zone lookup](Data/reference/taxi_zone_lookup.csv) |
 | PySpark notebooks | [Ingestion](Notebooks/Ingestion.ipynb) and [cleaning, validation and dimensional modelling](Notebooks/Cleaning.ipynb) |
 | Power BI | [Report file](PowerBI/Yellow_Taxi.pbix), [PDF preview](PowerBI/Report.pdf) and [semantic model diagram](PowerBI/Semantic_Model.png) |
-| Documentation | [Project evidence](Documentation/Project_Evidence.pdf), [star schema](Documentation/Star_Schema.md) and [DAX measures](Documentation/DAX_Measures.md) |
+| Documentation | [Case study](Documentation/Case_Study.md), [project evidence](Documentation/Project_Evidence.pdf), [star schema](Documentation/Star_Schema.md) and [DAX measures](Documentation/DAX_Measures.md) |
 | Presentation | [Yellow Taxi Trips slide deck](Presentation/Yellow_Taxi_Trips.pptx) |
 
 ## Run the analysis
@@ -25,4 +25,5 @@ We analysed 77,918,094 trips after cleaning 24 monthly files. Recorded trips fel
 ## Data source
 
 The NYC Taxi and Limousine Commission publishes the monthly trip records and field definitions. Recorded charges exclude cash tips. [TLC trip record data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
 
