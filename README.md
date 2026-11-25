@@ -1,29 +1,56 @@
-# NYC Yellow Taxi Analysis
+# NYC-YELLOW-TAXI-ANALYSIS
 
-A data visualisation project by David Abner Zuniga Montano and Thiago Pena Silverio at City College Dublin. We used Microsoft Fabric, PySpark and Power BI to compare New York City yellow taxi journeys in 2022 and 2023.
+Analysis of New York City yellow taxi trips in 2022 and 2023 using PySpark, Microsoft Fabric and Power BI.
 
-## Results
+> ⚠️ **Note:** This project was developed for academic purposes. The notebooks, report and presentation are in **English**.
 
-We analysed 77,918,094 trips after cleaning 24 monthly files. Recorded trips fell by 3.4% from 2022 to 2023, while the average recorded passenger charge rose from $21.66 to $28.46. Average journey time stayed close to 17.4 minutes. The [report preview](PowerBI/Report.pdf) shows the annual comparison, pickup locations and monthly trends.
+---
 
-## Project files
+**Name of the repository:** NYC Yellow Taxi Analysis
 
-| Component | Files |
-| --- | --- |
-| Data | [24 monthly Parquet files as a ZIP](https://github.com/Thiago-Pena-Silverio/NYC-YELLOW-TAXI-ANALYSIS/releases/download/data-2022-2023/nyc-yellow-taxi-2022-2023-raw.zip), [source URLs and SHA-256 checksums](Data/manifest.csv), [taxi-zone lookup](Data/reference/taxi_zone_lookup.csv) |
-| PySpark notebooks | [Ingestion](Notebooks/Ingestion.ipynb) and [cleaning, validation and dimensional modelling](Notebooks/Cleaning.ipynb) |
-| Power BI | [Report file](PowerBI/Yellow_Taxi.pbix), [PDF preview](PowerBI/Report.pdf) and [semantic model diagram](PowerBI/Semantic_Model.png) |
-| Documentation | [Case study](Documentation/Case_Study.md), [project evidence](Documentation/Project_Evidence.pdf), [star schema](Documentation/Star_Schema.md) and [DAX measures](Documentation/DAX_Measures.md) |
-| Presentation | [Yellow Taxi Trips slide deck](Presentation/Yellow_Taxi_Trips.pptx) |
+🎓 **Context:**
 
-## Run the analysis
+David Abner Zuniga Montano and Thiago Pena Silverio developed this project for the Data Visualization module at City College Dublin. We used [NYC Taxi and Limousine Commission trip records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to find out how trip volume, journey time and passenger charges changed between 2022 and 2023.
 
-1. Create a Microsoft Fabric Lakehouse. Place the 24 Parquet files in `Files/raw/yellow_taxi/` and the zone lookup in `Files/reference/taxi_zone_lookup.csv`.
-2. Import the ingestion and cleaning notebooks into Fabric and attach both to the Lakehouse. Run Ingestion first in a fresh Lakehouse, then Cleaning. The expected counts are 77,966,324 input rows and 77,918,094 cleaned trips.
-3. For a new semantic model, follow the relationships and DAX measures in the documentation. The supplied PBIX uses a live connection to the original Fabric model and requires access to that model. The PDF includes all three report pages and opens independently.
+📁 **Folders:**
 
-## Data source
+**[Data](Data/):** Contains the [taxi-zone lookup](Data/reference/taxi_zone_lookup.csv) and a [manifest](Data/manifest.csv) with the source URL and checksum for each of the 24 monthly Parquet files. The [raw data ZIP](https://github.com/Thiago-Pena-Silverio/NYC-YELLOW-TAXI-ANALYSIS/releases/download/data-2022-2023/nyc-yellow-taxi-2022-2023-raw.zip) is available in Releases.
 
-The NYC Taxi and Limousine Commission publishes the monthly trip records and field definitions. Recorded charges exclude cash tips. [TLC trip record data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+**[Notebooks](Notebooks/):** [Ingestion](Notebooks/Ingestion.ipynb) combines the monthly files and aligns their schemas. [Cleaning](Notebooks/Cleaning.ipynb) checks duplicates and timestamps, then builds the trip, date and location tables.
 
+**[PowerBI](PowerBI/):** Contains the [Power BI report](PowerBI/Yellow_Taxi.pbix), a [three-page PDF preview](PowerBI/Report.pdf) and the [semantic model diagram](PowerBI/Semantic_Model.png).
 
+**[Documentation](Documentation/):** Includes the [case study](Documentation/Case_Study.md), [project evidence](Documentation/Project_Evidence.pdf), [star schema](Documentation/Star_Schema.md) and [DAX measures](Documentation/DAX_Measures.md).
+
+**[Presentation](Presentation/):** The [slide deck](Presentation/Yellow_Taxi_Trips.pptx) presents the findings and explains how to interpret the charts.
+
+🛠️ **Tech Stack:**
+
+- Microsoft Fabric Lakehouse
+- Python and PySpark
+- Parquet and Delta tables
+- Power BI and DAX
+
+🎖️ **Features:**
+
+- Monthly and annual comparisons across 77,918,094 cleaned trip records 📅
+- Pickup patterns by borough, using the TLC taxi-zone lookup 🗺️
+- Fare and duration analysis showing how the average recorded charge rose from $21.66 to $28.46 while average journey time stayed close to 17 minutes 📊
+- Data quality checks for duplicate trips, invalid timestamps and unusual values in recorded tips 🔎
+
+---
+
+🖥️ **How to Run**
+
+**Requirements:**
+
+- To view the results, open the [PDF report](PowerBI/Report.pdf) directly on GitHub.
+- To run the notebooks, use a Microsoft Fabric workspace with Spark and a Lakehouse.
+- To use the supplied PBIX, Power BI Desktop needs access to the original Fabric semantic model. The [schema](Documentation/Star_Schema.md) and [measures](Documentation/DAX_Measures.md) document how to build your own model.
+
+**Instructions:** 💾
+
+1. Download the project using **Code → Download ZIP** and extract `NYC-YELLOW-TAXI-ANALYSIS-main.zip`.
+2. Download the separate raw data ZIP linked under **Data**. In a fresh Lakehouse, place the 24 Parquet files in `Files/raw/yellow_taxi/` and the lookup CSV in `Files/reference/taxi_zone_lookup.csv`.
+3. Import both notebooks into Fabric and attach them to that Lakehouse. Run `Ingestion.ipynb` first, then `Cleaning.ipynb`.
+4. Check the row counts against the project results. Ingestion produced **77,966,324** rows and cleaning retained **77,918,094** trips.
