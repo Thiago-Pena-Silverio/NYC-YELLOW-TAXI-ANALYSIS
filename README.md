@@ -1,4 +1,4 @@
-# NYC-YELLOW-TAXI-ANALYSIS
+# NYC Yellow Taxi Analysis
 
 Analysis of New York City yellow taxi trips in 2022 and 2023 using PySpark, Microsoft Fabric and Power BI.
 
@@ -6,13 +6,11 @@ Analysis of New York City yellow taxi trips in 2022 and 2023 using PySpark, Micr
 
 ---
 
-**Name of the repository:** NYC Yellow Taxi Analysis
-
-🎓 **Context:**
+## 🎓 Context
 
 David Abner Zuniga Montano and Thiago Pena Silverio developed this project for the Data Visualization module at City College Dublin. We used [NYC Taxi and Limousine Commission trip records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to find out how trip volume, journey time and passenger charges changed between 2022 and 2023.
 
-📁 **Folders:**
+## 📁 Folders
 
 **[Data](Data/):** Contains the [taxi-zone lookup](Data/reference/taxi_zone_lookup.csv) and a [manifest](Data/manifest.csv) with the source URL and checksum for each of the 24 monthly Parquet files. The [raw data ZIP](https://github.com/Thiago-Pena-Silverio/NYC-YELLOW-TAXI-ANALYSIS/releases/download/data-2022-2023/nyc-yellow-taxi-2022-2023-raw.zip) is available in Releases.
 
@@ -24,14 +22,14 @@ David Abner Zuniga Montano and Thiago Pena Silverio developed this project for t
 
 **[Presentation](Presentation/):** The [slide deck](Presentation/Yellow_Taxi_Trips.pptx) presents the findings and explains how to interpret the charts.
 
-🛠️ **Tech Stack:**
+## 🛠️ Tech Stack
 
 - Microsoft Fabric Lakehouse
 - Python and PySpark
 - Parquet and Delta tables
 - Power BI and DAX
 
-🎖️ **Features:**
+## 🎖️ Features
 
 - Monthly and annual comparisons across 77,918,094 cleaned trip records 📅
 - Pickup patterns by borough, using the TLC taxi-zone lookup 🗺️
@@ -40,7 +38,7 @@ David Abner Zuniga Montano and Thiago Pena Silverio developed this project for t
 
 ---
 
-🖥️ **How to Run**
+## 🖥️ How to Run
 
 **Requirements:**
 
